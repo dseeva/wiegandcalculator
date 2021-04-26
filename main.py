@@ -21,13 +21,29 @@ def mci():
         cn = hex(x)[2:]
         if len(cn) <= 1:
             cn = str("000") + str(cn)
-        if len(cn) <= 2:
+        elif len(cn) <= 2:
             cn = str("00") + str(cn)
-        if len(cn) <= 3:
+        elif len(cn) <= 3:
             cn = str("0") + str(cn)
-        if len(sc) <= 1:
+        elif len(cn) > 4:
+            print("Card range invalid")
+        elif len(sc) < 1:
+            print("Site code invalid")
+
+        if len(sc) > 6:
+            print("Site code invalid")
+        elif len(sc) <= 1:
+            sc = str("00000") + str(sc)
+        elif len(sc) <= 2:
+            sc = str("0000") + str(sc)
+        elif len(sc) <= 3:
+            sc = str("000") + str(sc)
+        elif len(sc) <= 4:
+            sc = str("00") + str(sc)
+        elif len(sc) <= 5:
             sc = str("0") + str(sc)
-        output = "0000" + sc + cn
+
+        output = sc + cn
         print(output)
     print(" ")
     menu1 = input("Type 1 to return to main menu or 2 to create another: ")
@@ -36,25 +52,36 @@ def mci():
     elif menu1 == str(2):
         mci()
 
+
 def sci():
     while True:
         sc = hex(int(input("Enter your Site code: ")))[2:]
         cn = hex(int(input("Enter your card number: ")))[2:]
 
-        sc_len = len(sc)
-        if sc_len <= 1:
-            sc = str("0") + str(sc)
-        else:
-            pass
-
         if len(cn) <= 1:
             cn = str("000") + str(cn)
         if len(cn) <= 2:
             cn = str("00") + str(cn)
-        elif len(cn) <= 3:
+        if len(cn) <= 3:
             cn = str("0") + str(cn)
+        if len(cn) > 4:
+            print("Card range invalid")
+        if len(sc) < 1:
+            print("Site code invalid")
+        if len(sc) > 6:
+            print("Site code invalid")
+        if len(sc) <= 1:
+            sc = str("00000") + str(sc)
+        if len(sc) <= 2:
+            sc = str("0000") + str(sc)
+        elif len(sc) <= 4:
+            sc = str("000") + str(sc)
+        elif len(sc) <= 4:
+            sc = str("00") + str(sc)
+        elif len(sc) <= 5:
+            sc = str("0") + str(sc)
 
-        output = "0000" + sc + cn
+        output = sc + cn
         print(" ")
         print("Combined output for input into database: ")
         print(output)
@@ -64,6 +91,7 @@ def sci():
             choice()
         elif menu1 == str(2):
             sci()
+
 
 def choice() -> object:
     print(art)
