@@ -27,11 +27,25 @@ def mci():
             cn = str("0") + str(cn)
         elif len(cn) > 4:
             print("Card range invalid")
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         elif len(sc) < 1:
             print("Site code invalid")
-
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         if len(sc) > 6:
             print("Site code invalid")
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         elif len(sc) <= 1:
             sc = str("00000") + str(sc)
         elif len(sc) <= 2:
@@ -64,12 +78,34 @@ def sci():
             cn = str("00") + str(cn)
         if len(cn) <= 3:
             cn = str("0") + str(cn)
+        if len(cn) < 1:
+            print("Card range invalid (too short)")
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         if len(cn) > 4:
-            print("Card range invalid")
+            print("Card range invalid (too long)")
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         if len(sc) < 1:
-            print("Site code invalid")
+            print("Site code invalid (too short)")
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         if len(sc) > 6:
-            print("Site code invalid")
+            print("Site code invalid (too long)")
+            menu1 = input("Type 1 to return to main menu or 2 to create another: ")
+            if menu1 == str(1):
+                choice()
+            elif menu1 == str(2):
+                mci()
         if len(sc) <= 1:
             sc = str("00000") + str(sc)
         if len(sc) <= 2:
