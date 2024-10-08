@@ -5,6 +5,7 @@ import numpy as np
 
 art = text2art("Wiegand Calculator")
 
+
 def mci():
     sc = hex(int(input("Enter your Site code: ")))[2:]
     cn = int(input("Enter first card in your card range: "))
@@ -38,6 +39,7 @@ def mci():
         choice()
     elif menu1 == str(2):
         mci()
+
 
 def sci():
     while True:
